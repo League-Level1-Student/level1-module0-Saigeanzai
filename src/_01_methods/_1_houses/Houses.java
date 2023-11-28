@@ -10,14 +10,44 @@ public class Houses {
 		
 	public void run() {
 		// Check the recipe to find out what code to put here
-		Robot rob = new Robot();
-		for (int i=0; i<5; i++) {
-			rob.miniaturize();
-			rob.setSpeed(100);
-			rob.setPenColor(250,0,0);
-			rob.penDown();
-			rob.move(100);
-			rob.turn(50);
+		robot();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+		static void robot() {
+			Robot rob = new Robot();
+			for(int i=0; i<3; i++) {
+				
+				rob.miniaturize();
+				rob.penDown();
+				rob.setSpeed(100);
+			    rob.move(10);
+			    rob.turn(-90);
+			    rob.move(100);
+			    rob.turn(90);
+			    rob.move(20);
+			    rob.turn(90);
+			    rob.move(100);
+			    rob.turn(-90);
+			}
+			
+			
+			
+			
 			
 		}
 		
@@ -38,4 +68,4 @@ public class Houses {
 		
 		
 	}
-}
+
