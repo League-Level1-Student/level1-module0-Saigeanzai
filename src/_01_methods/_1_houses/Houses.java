@@ -1,5 +1,7 @@
 package _01_methods._1_houses;
 
+import javax.swing.JOptionPane;
+
 import org.jointheleague.graphical.robot.Robot;
 
 /*
@@ -7,10 +9,16 @@ import org.jointheleague.graphical.robot.Robot;
  *    Level 1
  */
 public class Houses {
-		
+	
 	public void run() {
 		// Check the recipe to find out what code to put here
-		robot();
+		//robot();
+		
+		 
+		int small = 60;
+		 int large = 250;
+		int medium = 120;
+		small(small);
 		
 		
 		
@@ -24,28 +32,35 @@ public class Houses {
 		
 		
 		
-		
-		
-		
+			
 	}
-		static void robot() {
-			Robot rob = new Robot();
-			for(int i=0; i<3; i++) {
-				
+	public static void small(int height) {
+		Robot rob = new Robot();
+		
+		
+	
+	
+		
+			
+			
+				rob.setRandomPenColor();
 				rob.miniaturize();
 				rob.penDown();
 				rob.setSpeed(100);
-			    rob.move(10);
-			    rob.turn(-90);
-			    rob.move(100);
+			   rob.move(height);
 			    rob.turn(90);
-			    rob.move(20);
+			    rob.move(50);
 			    rob.turn(90);
-			    rob.move(100);
+			    rob.move(height);
+			    rob.setPenColor(80, 138, 19);
 			    rob.turn(-90);
-			}
+			    rob.move(30);
+			    rob.turn(-90);
+			   
+			    
 			
 			
+	
 			
 			
 			
