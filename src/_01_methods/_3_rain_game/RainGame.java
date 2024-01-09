@@ -81,6 +81,7 @@ if (Yposition==HEIGHT) {
 //new raindrop
 }
 image (bucket, 230, 300);
+
     }
 //60
     static public void main(String[] args) {
