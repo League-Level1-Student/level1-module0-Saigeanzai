@@ -81,7 +81,10 @@ ellipse(Xposition,Yposition,10,20);
 	Yposition+=5;
 
 image (bucket, mouseX, mouseY);
- 
+ if (Xposition==mouseX&&Yposition==mouseY){
+	// Xposition>=(mouseX-10) Yposition<=(mouseX+10);
+	 
+ }
 	
 
     }
