@@ -54,6 +54,8 @@ public class RainGame extends PApplet {
     int y;
     int x;
     int Yposition = 60;
+    int Xposition = 250;
+    int mouseY = 300;
     // Sets the size of your canvas
     @Override
     public void settings() {
@@ -75,12 +77,12 @@ public class RainGame extends PApplet {
 background(204, 229, 240);
 int raindrop;
 fill(35, 134, 176);
-ellipse(250,Yposition,10,20);
+ellipse(Xposition,Yposition,10,20);
 	Yposition+=5;
-if (Yposition==HEIGHT) {
-//new raindrop
-}
-image (bucket, 230, 300);
+
+image (bucket, mouseX, mouseY);
+ 
+	
 
     }
 //60
