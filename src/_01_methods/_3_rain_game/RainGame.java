@@ -46,17 +46,17 @@ import processing.core.PImage;
 public class RainGame extends PApplet {
     static final int WIDTH = 600;
     static final int HEIGHT = 600;
-
+    Random rand = new Random();
     int score = 0;
     int bucketWidth = 150;
-    int bucketHeight;
+    int bucketHeight = 150;
     PImage bucket;
     int y;
     int x;
     int Yposition = 60;
     int Xposition = 250;
     int mouseY = 300;
-    int AnotherYPosition = 60;
+    int randomNumber = rand.nextInt(WIDTH);
     // Sets the size of your canvas
     @Override
     public void settings() {
@@ -66,8 +66,8 @@ public class RainGame extends PApplet {
     @Override
     public void setup() {
     	bucket = loadImage("images/bucket.png");
-    	bucket.resize(bucketWidth, 150);
-    	image (bucket, 230, 300);
+    	bucket.resize(bucketWidth, bucketHeight);
+    	//image (bucket, 230, 300);
     	
     	
     }
@@ -76,26 +76,31 @@ public class RainGame extends PApplet {
     public void draw() {
     	
 background(204, 229, 240);
-int raindrop;
-int randomNumber = (int) random(WIDTH);
 fill(35, 134, 176);
-ellipse(Xposition,Yposition,10,20);
+ellipse(randomNumber,Yposition,10,20);
 	Yposition+=5;
 	
-image (bucket, mouseX, mouseY);
- if (Yposition>=mouseY&&Xposition>=mouseX-bucketWidth&&Xposition<=mouseX+bucketWidth){
-	 Yposition = 60;
-	 fill(35,134,176);
-	 ellipse(randomNumber,Yposition,10,20);
-	
-	 
-	 
- }
- fill(0, 0, 0);
-     textSize(16);
-     text("Score: " + score, 20, 20);
-     
+//image (bucket, mouseX, mouseY);
+if (Yposition>=600) {
+	Yposition = 5;
+    randomNumber = rand.nextInt(600);
 
+}
+if (Xposition == 300) {
+	image(bucket, mouseX, mouseY);
+}
+if (mouseX > Xposition) {
+	Xposition +=3;
+	image(bucket, mouseX, mouseY);
+} else { 
+	Xposition -=3;
+	image(bucket, mouseX,mouseY);
+}
+     
+checkCatch(Xposition);
+fill(0, 0, 0);
+textSize(16);
+text("Score: " + score, 20, 20);
     }
 //60
     static public void main(String[] args) {
