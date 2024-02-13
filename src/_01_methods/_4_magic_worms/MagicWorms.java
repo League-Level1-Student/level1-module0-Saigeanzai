@@ -36,9 +36,9 @@ public class MagicWorms extends PApplet {
     static final int HEIGHT = 400;
     int x = 10;
     Random rand = new Random();
-    int randomNumberX = rand.nextInt(WIDTH);
+    int randomNumberX = rand.nextInt(600);
     Random ran = new Random();
-    int randomNumY = ran.nextInt(WIDTH);
+    int randomNumY = ran.nextInt(400);
     @Override
     public void settings() {
         size(WIDTH, HEIGHT);
@@ -54,7 +54,7 @@ background(WIDTH,HEIGHT);
 for (int i=0; i<300; i++) {
 	fill(254, 187,23);
 	ellipse(randomNumberX,randomNumY,45,45);
-	x+=5;
+	randomNumberX+=5;
 }
     	
     	
