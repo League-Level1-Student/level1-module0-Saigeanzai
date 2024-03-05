@@ -79,6 +79,7 @@ pipeX -= 5;
        else if (birdYVelocity>lowerPipeHeight && x > pipeX && x < (pipeX+40)) {
            return true; }
        else { return false; }
+        
 }
 
 
