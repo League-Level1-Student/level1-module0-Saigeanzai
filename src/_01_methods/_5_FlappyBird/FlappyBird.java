@@ -15,6 +15,8 @@ int pipeX = 200;
 int pipex2 = 200;
 int upperPipeHeight = (int) random(100, 400);
 int lowerPipeHeight = (int) random(100,400);
+int pipeWidth = 40;
+int scoreX = 0;
     @Override
     public void settings() {
         size(WIDTH, HEIGHT);
@@ -36,20 +38,39 @@ int lowerPipeHeight = (int) random(100,400);
     	 gravity+=5;
     	// birdYVelocity= -5;
     	 fill(243, 194, 118);
-    	 rect(pipeX, lowerPipeHeight, 40, 600);
+    	 rect(pipeX, lowerPipeHeight, pipeWidth, 600);
 pipeX -= 5;
     		teleportPipes(); 
     		fill(243, 194, 118);
-    		rect(pipex2, 0, 40, upperPipeHeight);
+    		rect(pipex2, 0, pipeWidth, upperPipeHeight);
     		teleportUpperPipes();
     		pipex2 -= 5;
-    		
+    		System.out.println(birdYVelocity);
+    		if (pipeX<=5) {
+    			scoreX +=1;
+    		}
     		int pipeGap = 145;
     		lowerPipeHeight = upperPipeHeight + pipeGap;
+    		fill (0, 0, 139);
+    		text("score = " + scoreX, 40, 40);
     		
+    		if (birdYVelocity >= 599) {
+    			System.exit(0);
+    			
+    		
+    		}
     		
     		
     	 }
+   
+    
+    boolean intersectsPipes() { 
+        if (birdYVelocity < upperPipeHeight && x > pipeX && x < (pipeX+pipeWidth)){
+           return true; }
+       else if (birdYVelocity>lowerPipeHeight && x > pipeX && x < (pipeX+pipeWidth)) {
+           return true; }
+       else { return false; }
+}
     
     public void mousePressed() {
     	birdYVelocity -= 130;
@@ -73,14 +94,9 @@ pipeX -= 5;
 	    	
 		
 	}
-    boolean intersectsPipes() { 
-        if (birdYVelocity < upperPipeHeight && x > pipeX && x < (pipeX+40)){
-           return true; }
-       else if (birdYVelocity>lowerPipeHeight && x > pipeX && x < (pipeX+40)) {
-           return true; }
-       else { return false; }
+    
         
-}
+
 
 
     static public void main(String[] args) {
