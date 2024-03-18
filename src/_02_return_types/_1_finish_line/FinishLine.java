@@ -28,10 +28,14 @@ public class FinishLine {
 		//5. If the robot has crossed the finish line... 
 			
 			//6. Use a pop up to say the robot finished and how far it went
-		JOptionPane.showMessageDialog(null, "The Robot has finished, it has gone" + distance + "far");
-		
+		if (finishLine==true)
+		JOptionPane.showMessageDialog(null, "The Robot has finished, it has gone " + distance + " far");
+	
 		//7. Else use a pop up to say the robot did not finish and how far it went
 		
+		else if(finishLine==false){
+			JOptionPane.showMessageDialog(null, "The Robot did not finish, it has gone " + distance + " far");
+		}
 			
 		
 	}
