@@ -12,7 +12,5 @@ public class jack_in_the_box_runner {
          
         	 
          
-        jack.showPicture("jackInTheBox.png");
-
 }
 }

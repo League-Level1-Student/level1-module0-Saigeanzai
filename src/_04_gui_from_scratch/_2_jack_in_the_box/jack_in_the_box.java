@@ -16,14 +16,16 @@ import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JLabel;
 
 public class jack_in_the_box implements ActionListener {
 	
 	JFrame frame = new JFrame();
 	JLabel label = new JLabel();
+	JPanel panel = new JPanel();
 	
-
+int counter =0;
 	
 	
 	
@@ -39,9 +41,11 @@ public class jack_in_the_box implements ActionListener {
 	public void showButton() {
 		// TODO Auto-generated method stub
 		System.out.println("Button clicked");  
-        frame.setVisible(true);
         JButton button = new JButton();
+        frame.setVisible(true);
+        button.setText("click me!");
         frame.add(button);
+       // panel.add(button);
         frame.pack();
         button.addActionListener(this);
 	}
@@ -49,7 +53,11 @@ public class jack_in_the_box implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-	
+	counter++;
+	if(counter==5) {
+		showPicture("JackIntheBox.png");
+		playSound("homer-woohoo.wav");
+	}
 	}
 	public void showPicture(String fileName) { 
 	     try {
